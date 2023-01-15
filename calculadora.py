@@ -9,6 +9,10 @@ def numeros ():
     num1 = float(input("\n Ingresa un número: "))
     num2 = float(input("\n Ingresa otro número: "))
 
+def numero ():
+    global num1
+    num1 = float(input("\n Ingresa un número: "))
+
 #8 Dividir en funciones
 #Función para realizar una suma de dos números
 def suma(num1, num2):
@@ -49,33 +53,19 @@ def coseno(num1):
 def tangente(num1):
     print("\n El resultado es: ", np.tan(num1))
 
-#1 Menú de operaciones disponibles 
-def menu(): 
-    print('\n ¿Qué operación quieres realizar?')
-    print('1 Suma')
-    print('2 Resta')
-    print('3 Multiplicación')
-    print('4 División')
-    print('5 Raiz n')
-    print('6 Exponente n')
-    print('7 Seno')
-    print('8 Coseno')
-    print('9 Tangente')
-    print('10 Salir')
-
-menu()
-
-opc = int(input('\n Opción: '))
-
 #3 Opción para volver a ejecutar la operación o salir al menú
 def repetir(opc):
+    
     while 1:
+        if opc == 10:
+            exit()
+            
         x = int(input("\n Elige 1 para volver a ejecutar la misma operación o 2 para regresar al menú principal: "))
         if x == 1:
             operaciones(opc)
-        elif x == 2:
         #regresar al menú  
-             menu()
+        elif x == 2:
+             break
         else:
             print("\n Opción inválida, elige otra \n")
 
@@ -93,24 +83,39 @@ def operaciones(opc):
         numeros()
         division(num1,num2)
     elif opc == 5:
-        numeros()
+        numero()
         raiz(num1)
     elif opc == 6:
-        numeros()
+        numero()
         exponente(num1)
     elif opc == 7:
-        numeros()
-        seno(num1,num2)
+        numero()
+        seno(num1)
     elif opc == 8:
-        numeros()
-        coseno(num1,num2)
+        numero()
+        coseno(num1)
     elif opc == 9:
-        numeros()
-        tangente(num1,num2)
+        numero()
+        tangente(num1)
     elif opc == 10:
-        print("\n Adiós")
+        print("\n Fin..")
     else:
         print("\n Opción inválida \n")
 
-operaciones(opc)
-repetir(opc)
+#1 Menú de operaciones disponibles 
+while 1:
+    print('\n ¿Qué operación quieres realizar?')
+    print('1 Suma')
+    print('2 Resta')
+    print('3 Multiplicación')
+    print('4 División')
+    print('5 Raiz n')
+    print('6 Exponente n')
+    print('7 Seno')
+    print('8 Coseno')
+    print('9 Tangente')
+    print('10 Salir')
+
+    opc = int(input('\n Opción: '))
+    operaciones(opc)
+    repetir(opc)
