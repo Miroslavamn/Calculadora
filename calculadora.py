@@ -11,39 +11,42 @@ def numeros ():
 
 #Función para realizar una suma de dos números
 def suma(num1, num2):
-    print("El resultado es: ", num1+num2)
+    print("\n El resultado es: ", num1+num2)
 
 #Función para realizar una resta de dos números
 def resta(num1, num2):
-    print("El resultado es: ", num1-num2)
+    print("\n El resultado es: ", num1-num2)
 
 #Función para realizar una división de dos números
 def multiplicacion(num1, num2):
-    print("El resultado es: ", num1/num2)
+    print("\n El resultado es: ", num1*num2)
 
 #Función para realizar una multiplicación de dos números
 def division(num1, num2):
-    print("El resultado es: ", num1*num2)
+    if num2 == 0:
+        print("\n No es posible dividir entre cero")
+    else:
+        print("\n El resultado es: ", num1/num2)
 
 #Función para calcular la raiz cuadrada de un número
 def raiz(num1):
-    print("El resultado es: ", np.sqrt(num1))
+    print("\n El resultado es: ", np.sqrt(num1))
 
 #Función para calcular el exponente de un número
 def exponente(num1):
-    print("El resultado es: ", np.exp(num1))
+    print("\n El resultado es: ", np.exp(num1))
 
 #Función para calcular el seno de un número
 def seno(num1):
-    print("El resultado es: ", np.sin(num1))
+    print("\n El resultado es: ", np.sin(num1))
 
 #Función para calcular el coseno de un número
 def coseno(num1):
-    print("El resultado es: ", np.cos(num1))
+    print("\n El resultado es: ", np.cos(num1))
 
 #Función para calcular el tangente de un número
 def tangente(num1):
-    print("El resultado es: ", np.tan(num1))
+    print("\n El resultado es: ", np.tan(num1))
 
 print('\n ¿Qué operación quieres realizar?')
 print('1 Suma')
@@ -67,10 +70,10 @@ elif opc == 2:
     resta(num1,num2)
 elif opc == 3:
     numeros()
-    division(num1,num2)
+    multiplicacion(num1,num2)
 elif opc == 4:
     numeros()
-    multiplicacion(num1,num2)
+    division(num1,num2)
 elif opc == 5:
     numeros()
     raiz(num1)
